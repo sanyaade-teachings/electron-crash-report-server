@@ -778,9 +778,9 @@ color@^2.0.1:
     color-convert "^1.9.1"
     color-string "^1.5.2"
 
-commander@2.16.0:
-  version "2.16.0"
-  resolved "https://registry.yarnpkg.com/commander/-/commander-2.16.0.tgz#f16390593996ceb4f3eeb020b31d78528f7f8a50"
+commander@2.17.1:
+  version "2.17.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-2.17.1.tgz#bd77ab7de6de94205ceacc72f1716d29f20a77bf"
 
 component-emitter@^1.2.1:
   version "1.2.1"
@@ -2196,11 +2196,11 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-massive@5.1.0:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/massive/-/massive-5.1.0.tgz#5a267ddd9e85dc81bed9eb69fd74dcd71b79a2f4"
+massive@5.2.0:
+  version "5.2.0"
+  resolved "https://registry.yarnpkg.com/massive/-/massive-5.2.0.tgz#7b734c54c2230db37f161737d1339f3d9e4f879f"
   dependencies:
-    commander "2.16.0"
+    commander "2.17.1"
     glob "7.1.2"
     lodash "4.17.10"
     pg-promise "8.4.5"

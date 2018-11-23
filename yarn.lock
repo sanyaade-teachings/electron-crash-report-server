@@ -1535,9 +1535,9 @@ hapi-auth-basic@5.0.0:
     boom "7.x.x"
     hoek "5.x.x"
 
-hapi@17.5.2:
-  version "17.5.2"
-  resolved "https://registry.yarnpkg.com/hapi/-/hapi-17.5.2.tgz#9c5823cdcdd17e5621ebc8928aefb144d033caac"
+hapi@17.8.1:
+  version "17.8.1"
+  resolved "https://registry.yarnpkg.com/hapi/-/hapi-17.8.1.tgz#63cc5bbc138b6ae0919e977764647a17556e4c87"
   dependencies:
     accept "3.x.x"
     ammo "3.x.x"
@@ -1547,11 +1547,12 @@ hapi@17.5.2:
     catbox "10.x.x"
     catbox-memory "3.x.x"
     heavy "6.x.x"
-    hoek "5.x.x"
-    joi "13.x.x"
+    hoek "6.x.x"
+    joi "14.x.x"
     mimos "4.x.x"
     podium "3.x.x"
     shot "4.x.x"
+    somever "2.x.x"
     statehood "6.x.x"
     subtext "6.x.x"
     teamwork "3.x.x"
@@ -1619,6 +1620,10 @@ heavy@6.x.x:
 hoek@5.x.x:
   version "5.0.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-5.0.3.tgz#b71d40d943d0a95da01956b547f83c4a5b4a34ac"
+
+hoek@6.x.x:
+  version "6.0.3"
+  resolved "https://registry.yarnpkg.com/hoek/-/hoek-6.0.3.tgz#7884360426d927865a0a1251fc9c59313af5b798"
 
 home-or-tmp@^2.0.0:
   version "2.0.0"
@@ -2010,6 +2015,14 @@ joi@13.x.x:
   resolved "https://registry.yarnpkg.com/joi/-/joi-13.2.0.tgz#72307f1765bb40b068361f9368a4ba1092b8478e"
   dependencies:
     hoek "5.x.x"
+    isemail "3.x.x"
+    topo "3.x.x"
+
+joi@14.x.x:
+  version "14.1.0"
+  resolved "https://registry.yarnpkg.com/joi/-/joi-14.1.0.tgz#98a7923108a9f361192551b29f538488d07953cc"
+  dependencies:
+    hoek "6.x.x"
     isemail "3.x.x"
     topo "3.x.x"
 
@@ -3516,6 +3529,13 @@ snapdragon@^0.8.1:
     source-map "^0.5.6"
     source-map-resolve "^0.5.0"
     use "^3.1.0"
+
+somever@2.x.x:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/somever/-/somever-2.0.0.tgz#7bdbed3bee8ece2c7c8a2e7d9a1c022bd98d6c89"
+  dependencies:
+    bounce "1.x.x"
+    hoek "6.x.x"
 
 source-map-resolve@^0.5.0:
   version "0.5.1"

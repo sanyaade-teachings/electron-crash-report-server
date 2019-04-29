@@ -1,77 +1,73 @@
 {
-  "name": "electron-crash-report-server",
-  "version": "2.0.0-pre",
-  "description": "Crash report server for Electron applications",
-  "repository": "github:johnmuhl/electron-crash-report-server",
-  "author": "John Muhl <git@johnmuhl.com>",
-  "license": "MIT",
-  "bugs": "https://github.com/johnmuhl/electron-crash-report-server/issues",
-  "homepage": "https://johnmuhl.github.io/electron-crash-report-server",
-  "scripts": {
-	"build": "rollup -c",
-	"build:dev": "rollup -cw",
-	"dev": "run-p --race *:dev",
-	"fmt": "yarn run prettier && yarn run eslint --fix",
-	"start:dev": "nodemon -r esm -i client -i 'server/public/bundle.*' server",
-	"test": "yarn eslint",
-	"eslint": "eslint --ext html,js .",
-	"prettier": "yarn prettier:default && yarn prettier:html",
-	"prettier:default": "prettier --write './*.{js,json,md}' '{client,server}/*.{css,js}' '!./package.json'",
-	"prettier:html": "prettier --write --parser vue '{client,server}/**/*.html'",
-	"heroku-postbuild": "yarn build"
-  },
-  "engines": {
-	"node": "^8.9.4",
-	"yarn": "^1.3.2"
-  },
-  "dependencies": {
-	"boom": "7.2.0",
-	"dotenv": "6.0.0",
-	"esm": "3.0.65",
-	"hapi": "17.5.2",
-	"hapi-auth-basic": "5.0.0",
-	"inert": "5.1.0",
-	"massive": "5.1.0",
-	"minidump": "0.13.0",
-	"parse-ms": "1.0.1",
-	"postcss": "6.0.23",
-	"postcss-cssnext": "3.1.0",
-	"rollup": "0.62.0",
-	"rollup-plugin-babel-minify": "5.0.0",
-	"rollup-plugin-commonjs": "9.1.3",
-	"rollup-plugin-node-resolve": "3.3.0",
-	"rollup-plugin-svelte": "4.1.0",
-	"sb-debounce": "1.0.2",
-	"svelte": "2.9.3"
-  },
-  "devDependencies": {
-	"eslint": "5.0.1",
-	"eslint-config-oz": "github:johnmuhl/eslint-config-oz#v4.0.1",
-	"eslint-plugin-html": "4.0.5",
-	"eslint-plugin-import": "2.13.0",
-	"nodemon": "1.18.0",
-	"npm-run-all": "4.1.3",
-	"prettier": "1.13.7"
-  },
-  "browserslist": [
-	"last 2 versions"
-  ],
-  "eslintConfig": {
-	"extends": "oz",
-	"plugins": [
-	  "html"
-	]
-  },
-  "eslintIgnore": [
-	"bundle.*"
-  ],
-  "greenkeeper": {
-	"ignore": [
-	  "minidump"
-	]
-  },
-  "prettier": {
-	"proseWrap": "always",
-	"trailingComma": "es5"
-  }
+	"name": "electron-crash-report-server",
+	"version": "2.0.0-pre",
+	"description": "Crash report server for Electron applications",
+	"repository": "github:johnmuhl/electron-crash-report-server",
+	"author": "John Muhl <git@johnmuhl.com>",
+	"license": "MIT",
+	"bugs": "https://github.com/johnmuhl/electron-crash-report-server/issues",
+	"homepage": "https://johnmuhl.github.io/electron-crash-report-server",
+	"scripts": {
+		"build": "rollup -c",
+		"build:dev": "rollup -cw",
+		"dev": "run-p --race *:dev",
+		"fmt": "yarn run prettier && yarn run eslint --fix",
+		"start:dev": "nodemon -r esm -i client -i 'server/public/bundle.*' server",
+		"test": "yarn eslint",
+		"eslint": "eslint --ext html,js .",
+		"prettier": "yarn prettier:default && yarn prettier:html",
+		"prettier:default": "prettier --write './*.{js,json,md}' '{client,server}/*.{css,js}' '!./package.json'",
+		"prettier:html": "prettier --write --parser vue '{client,server}/**/*.html'",
+		"heroku-postbuild": "yarn build"
+	},
+	"engines": {
+		"node": "^8.9.4",
+		"yarn": "^1.3.2"
+	},
+	"dependencies": {
+		"boom": "7.2.0",
+		"dotenv": "6.0.0",
+		"esm": "3.0.65",
+		"hapi": "17.5.2",
+		"hapi-auth-basic": "5.0.0",
+		"inert": "5.1.0",
+		"massive": "5.1.0",
+		"minidump": "0.13.0",
+		"parse-ms": "1.0.1",
+		"postcss": "6.0.23",
+		"postcss-cssnext": "3.1.0",
+		"rollup": "0.62.0",
+		"rollup-plugin-babel-minify": "5.0.0",
+		"rollup-plugin-commonjs": "9.1.3",
+		"rollup-plugin-node-resolve": "3.3.0",
+		"rollup-plugin-svelte": "4.1.0",
+		"sb-debounce": "1.0.2",
+		"svelte": "2.9.3"
+	},
+	"devDependencies": {
+		"eslint": "5.0.1",
+		"eslint-config-oz": "github:johnmuhl/eslint-config-oz#v4.0.1",
+		"eslint-plugin-html": "4.0.5",
+		"eslint-plugin-import": "2.13.0",
+		"nodemon": "1.18.0",
+		"npm-run-all": "4.1.3",
+		"prettier": "1.13.7"
+	},
+	"browserslist": [
+		"last 2 versions"
+	],
+	"eslintConfig": {
+		"extends": "oz",
+		"plugins": [
+			"html"
+		]
+	},
+	"eslintIgnore": [
+		"bundle.*"
+	],
+	"greenkeeper": {
+		"ignore": [
+			"minidump"
+		]
+	}
 }

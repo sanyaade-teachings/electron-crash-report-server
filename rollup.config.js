@@ -8,29 +8,29 @@ import svelte from "rollup-plugin-svelte";
 const production = process.env.NODE_ENV === "production";
 
 export default {
-  input: "client/index.js",
-  output: {
-    file: "server/public/bundle.js",
-    format: "iife",
-    name: "ECRS",
-    sourcemap: true,
-  },
-  plugins: [
-    cjs(),
-    resolve(),
-    svelte({
-      css: css => css.write("server/public/bundle.css"),
-      dev: !production,
-      preprocess: {
-        style: async ({ content }) => {
-          const { css } = await postcss([cssnext]).process(content, {
-            from: undefined,
-          });
+	input: "client/index.js",
+	output: {
+		file: "server/public/bundle.js",
+		format: "iife",
+		name: "ECRS",
+		sourcemap: true,
+	},
+	plugins: [
+		cjs(),
+		resolve(),
+		svelte({
+			css: css => css.write("server/public/bundle.css"),
+			dev: !production,
+			preprocess: {
+				style: async ({ content }) => {
+					const { css } = await postcss([cssnext]).process(content, {
+						from: undefined,
+					});
 
-          return { code: css };
-        },
-      },
-    }),
-    production && minify(),
-  ],
+					return { code: css };
+				},
+			},
+		}),
+		production && minify(),
+	],
 };

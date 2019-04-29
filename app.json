@@ -1,17 +1,17 @@
 {
-  "name": "electron-crash-report-server",
-  "description": "Crash report server for Electron applications",
-  "repository": "https://github.com/johnmuhl/electron-crash-report-server",
-  "addons": [
-    {
-      "plan": "heroku-postgresql",
-      "options": {
-        "version": "10.1"
-      }
-    }
-  ],
-  "env": {
-    "AUTH_USER": "crash",
-    "AUTH_PASS": "electron"
-  }
+	"name": "electron-crash-report-server",
+	"description": "Crash report server for Electron applications",
+	"repository": "https://github.com/johnmuhl/electron-crash-report-server",
+	"addons": [
+		{
+			"plan": "heroku-postgresql",
+			"options": {
+				"version": "10.1"
+			}
+		}
+	],
+	"env": {
+		"AUTH_USER": "crash",
+		"AUTH_PASS": "electron"
+	}
 }

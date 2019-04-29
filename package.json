@@ -1,12 +1,12 @@
 {
 	"name": "electron-crash-report-server",
-	"version": "2.0.0-pre",
 	"description": "Crash report server for Electron applications",
+	"version": "2.0.0-pre",
+	"license": "Unlicense",
+	"author": "John Muhl",
+	"homepage": "https://pacific-falls-32011.herokuapp.com/",
 	"repository": "github:johnmuhl/electron-crash-report-server",
-	"author": "John Muhl <git@johnmuhl.com>",
-	"license": "MIT",
 	"bugs": "https://github.com/johnmuhl/electron-crash-report-server/issues",
-	"homepage": "https://johnmuhl.github.io/electron-crash-report-server",
 	"scripts": {
 		"build": "rollup -c",
 		"build:dev": "rollup -cw",

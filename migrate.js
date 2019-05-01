@@ -3,15 +3,18 @@ export default `
     id serial PRIMARY KEY,
     body jsonb NOT NULL,
     dump bytea NOT NULL,
-    open boolean DEFAULT TRUE,
+    stack text NOT NULL,
     search tsvector,
     closed_at timestamptz,
     created_at timestamptz DEFAULT now(),
     updated_at timestamptz DEFAULT now()
   );
 
-  CREATE INDEX IF NOT EXISTS idx_reports ON reports USING GIN(body jsonb_path_ops);
-  CREATE INDEX IF NOT EXISTS idx_reports_search ON reports USING GIN(search);
+  ALTER TABLE reports ADD COLUMN IF NOT EXISTS stack text;
+  ALTER TABLE reports DROP COLUMN IF EXISTS open;
+
+  CREATE INDEX IF NOT EXISTS index_reports ON reports USING GIN(body jsonb_path_ops);
+  CREATE INDEX IF NOT EXISTS index_reports_search ON reports USING GIN(search);
 
   CREATE OR REPLACE FUNCTION reports_set_created_at() RETURNS TRIGGER AS $$
     BEGIN

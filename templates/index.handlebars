@@ -1,0 +1,11 @@
+<ul>
+	{{#each reports}}
+	<li>
+		<a href="/r/{{id}}"><span>#</span>{{id}}</a>
+		<span class="version">{{body._version}}</span>
+		<span class="{{body.platform}}">{{body.platform}}</span>
+		<span class="application">{{body._productName}}</span>
+		<span class="{{body.process_type}}">{{body.process_type}}</span>
+	</li>
+	{{/each}}
+</ul>

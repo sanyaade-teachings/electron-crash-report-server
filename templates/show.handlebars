@@ -1,0 +1,86 @@
+<h1>
+	<span>#</span>{{report.id}}
+</h1>
+
+<div id="created-at">
+	{{report.created_at}}
+</div>
+
+<div id="closed_at">
+	{{#if report.closed_at}}
+		{{report.closed_at}}
+	{{else}}
+		—
+	{{/if}}
+</div>
+
+<div id="opened_duration">—</div>
+
+{{#if report.closed_at}}
+<button id="toggle-report-status-button" type="button">open report</button>
+{{else}}
+<button id="toggle-report-status-button" type="button">close report</button>
+{{/if}}
+
+<button id="delete-report-button" type="button">delete report</button>
+
+<button id="view-report-body-button" type="button">view report details</button>
+<pre class="hidden" id="report-body-text">{{report.body}}</pre>
+
+<a class="button" id="view-stack-trace-button" href="/r/{{report.id}}/stack">view stack trace</a>
+<pre class="hidden" id="stack-trace-text"></pre>
+
+<a class="button" href="/r/{{report.id}}/dump">download dump file</a>
+
+<script type="module">
+	const delete_report_button = document.querySelector("#delete-report-button");
+	const view_report_body_button = document.querySelector("#view-report-body-button");
+	const view_stack_trace_button = document.querySelector("#view-stack-trace-button");
+	const toggle_report_status_button = document.querySelector("#toggle-report-status-button");
+	const report_body_text = document.querySelector("#report-body-text");
+	const stack_trace_text = document.querySelector("#stack-trace-text");
+
+	let report_body_visible = true;
+	let stack_trace_loaded = false;
+	let stack_trace_visible = false;
+
+	toggle_report_status_button.addEventListener("click", async event => {
+		const response = await fetch("/r/{{report.id}}", { method: "PATCH" });
+		const report = await response.json();
+
+		console.log(report);
+	});
+
+	delete_report_button.addEventListener("click", async event => {
+		await fetch("/r/{{report.id}}", { method: "DELETE" });
+		document.location.href = "/";
+	});
+
+	view_report_body_button.addEventListener("click", event => {
+		report_body_text.classList.toggle("hidden");
+	});
+
+	view_stack_trace_button.addEventListener("click", async event => {
+		event.preventDefault();
+
+		if (stack_trace_text.classList.contains("hidden")) {
+			if (!stack_trace_loaded) {
+				try {
+					const response = await fetch("/r/{{report.id}}/stack");
+					const stack_trace = await response.text();
+
+					stack_trace_loaded = true;
+					stack_trace_text.textContent = stack_trace;
+				} catch (error) {
+					throw error;
+				}
+			}
+
+			stack_trace_text.classList.remove("hidden");
+		} else {
+			stack_trace_text.classList.add("hidden");
+		}
+
+		
+	});
+</script>
